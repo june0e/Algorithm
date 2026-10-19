@@ -7,8 +7,8 @@ def solution(nums):
     
     for phoneketmon,count in counts.items():
         value.append(phoneketmon)
-    if len(value) >= len(nums)/2:
-        answer = len(nums)/2
+    if len(value) >= len(nums)//2:
+        answer = len(nums)//2
     else:
         answer =len(value)
     return answer
