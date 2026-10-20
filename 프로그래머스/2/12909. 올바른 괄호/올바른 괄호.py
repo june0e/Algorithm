@@ -1,22 +1,22 @@
 def solution(s):
     answer = True
-    count_left = 0
-    count_right = 0
-    
-    for i,char_s in enumerate(s):
-        if(i == 0):
-            if( char_s != "("):
-                return False 
-            
-        if char_s == "(":
-             count_left += 1
-        if char_s == ")":
-                count_right += 1
-        if count_left < count_right:
-            return False 
-    if(count_left != count_right):
-        return False
-    return answer
-        
+    status = 0
+    for i,j in enumerate(s):
 
-    
+        if i == 0:
+            if j != '(':
+                return False
+            else:
+                status += 1
+                continue
+        if j == '(':
+            status += 1
+        else:
+            status -= 1
+            
+        if status < 0 :
+            return False
+    if status > 0:
+        return False
+
+    return True
