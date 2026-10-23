@@ -1,17 +1,12 @@
-from collections import deque
 def solution(prices):
     answer = []
-    prices_all = deque(prices)
-    result = 0
-    while (prices_all):
-        price = prices_all.popleft()
-
-        for idx,x in enumerate(prices_all):
-            if price > x:
-                result += 1
+    for i in range(len(prices)):
+        cnt = 0
+        for j in range(i+1,len(prices)):
+            if prices[j] >= prices[i]:
+                cnt+=1
+            else:
+                cnt+=1
                 break
-            else : result += 1
-        answer.append(result)
-        result = 0
-        
+        answer.append(cnt)
     return answer
