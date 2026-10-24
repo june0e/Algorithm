@@ -22,7 +22,7 @@ def solution(sequence, k):
                 
         if current_sum == k:
             current_len = right-left
-            if current_len < best_len or(current_len == best_len and left < best_str_idx) :
+            if current_len < best_len or(current_len == best_len and left < best_str_idx) : # best_len보다 작거나, 같다면 left가 현재 best_str_idx보다 먼저 시작할 떄.  
                 best_len = right - left
                 best_str_idx = left
                 best_end_idx = right-1
